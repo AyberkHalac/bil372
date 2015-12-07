@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{ data[0][0].title() }}&nbsp;{{ data[0][1].title() }}</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../static/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../static/profile.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="../index.html">Ana Sayfa</a>
+		</div>
+        <ul class="nav navbar-nav">
+            <li><a href="../listall">Hepsini Gör</a></li>
+        </ul>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+		  <form class="navbar-form navbar-right" action="/result" method=post>
+			<div class="form-group">
+			  <input type="text" class="form-control" name="x">
+			</div>
+			<button type="submit" class="btn btn-default">Ara</button>
+		  </form>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-left">
+
+            <div class="row" id="wrapper-row">
+
+                <div class="col-md-2 col-md-offset-1" id="photopane">
+                    <a href="../profile/{{ pid }}"><img class="resize" src="/static/img/pp.png"></a>
+
+                </div>
+
+
+                <div class="col-md-8" id="profilepane">
+                    <br>
+                    <p><b>Name:</b>&nbsp;&nbsp;
+                        {% if data[0][0] != None %}
+                            {{ data[0][0].title() }}
+                        {% else %}
+                            None
+                        {% endif %}
+                        &nbsp;
+                        {% if data[0][1] != None %}
+                            {{ data[0][1].title() }}
+                        {% else %}
+                            None
+                        {% endif %}
+
+                    </p> <!-- name -->
+
+                    <p><b>Title:</b>&nbsp;&nbsp;
+                        {% if data[0][2] != None %}
+                            {{ data[0][2].title() }}
+                        {% else %}
+                            None
+                        {% endif %}
+
+                    </p> <!-- title -->
+
+                    <p><b>University:</b>&nbsp;&nbsp;
+                        {% if data[1][0] != None %}
+                            {{ data[1][0].title() }}
+                        {% else %}
+                            None
+                        {% endif %}
+
+                    </p> <!-- uni -->
+                    <p><b>Department:</b>&nbsp;&nbsp;
+                        {% if data[1][1] != None %}
+                            {{ data[1][1].title() }}
+                        {% else %}
+                            None
+                        {% endif %}
+                    </p> <!-- dept -->
+
+                    <h3>Interests:</h3>
+                    <ul> <!-- interests -->
+                    {% for i in data[3] %}
+                        <li>
+                            <p>{{ i.title() }}</p>
+                        </li>
+                    {% endfor %}
+                    </ul>
+
+                    <h3>Publications:</h3>
+                    <ul> <!-- publications -->
+                    {% for i in data[2] %}
+                        <li>
+                            <p>{{ i[0][0] }}</p>
+
+                            <a href="{{ i[0][1] }}">{{ i[0][1] }}</a>
+                            <br>
+                        </li>
+                        <br>
+                    {% endfor %}
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- jQuery -->
+    <script src="../static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../static/js/bootstrap.min.js"></script>
+
+	   
+    <script src="../static/js/script.js"></script>
+
+</body>
+
+</html>

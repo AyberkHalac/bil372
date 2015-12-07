@@ -1,0 +1,132 @@
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.text-vertical-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.text-vertical-center h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 4.5em;
+    font-weight: 700;
+}
+
+hr.small {
+    max-width: 100px;
+}
+
+body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #E7EFF3;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+/* Header */
+
+.header {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#wrapper-row {
+	display: table;
+	position: relative;
+	width: 100%;
+	height: 85%;
+	margin-bottom: 7%;
+}
+
+#filterpane {
+	position: relative;
+	height: 60%;
+    margin-right: 10px;
+    background-color:rgba(255, 255, 255, 0.7);
+
+}
+
+#resultpane {
+	position: relative;
+	height: 100%;
+    margin-right: 2px;
+	overflow: auto;
+    background-color:rgba(255, 255, 255, 0.4);
+}
+
+#result-item-wrapper {
+
+
+}
+
+#result-item {
+	position: relative;
+	height: auto;
+	background-color: rgba(255,255,255,0.7);
+    border-bottom: 3px solid;
+    border-bottom-color: #E1E8ED;
+}
+
+
+/* Footer */
+
+footer {
+    padding: 100px 0;
+}
+
+
+.btn-tw{
+    color: #ffffff;
+    background-color: #4082A5;
+}
+
+.crtext{
+    text-align: left;
+    padding-left: 15px;
+    overflow:auto;
+}
+
+.crhref{
+    font-size: 120%;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align:left;
+    display:block;
+}
+
+.resize{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    width:120px; /* you can use % */
+    height: auto;
+}
+
+#title p {
+
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 40pt;
+    font-weight: 700;
+
+
+}
